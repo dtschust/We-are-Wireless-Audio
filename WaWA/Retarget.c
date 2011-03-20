@@ -14,7 +14,7 @@
 #pragma import(__use_no_semihosting_swi)
 
 
-extern int  sendchar(int ch);  /* in serial.c */
+extern int  sendchar3(int ch);  /* in serial.c */
 
 
 struct __FILE { int handle; /* Add whatever you need here */ };
@@ -22,7 +22,7 @@ FILE __stdout;
 
 
 int fputc(int ch, FILE *f) {
-  return (sendchar(ch));
+  return (sendchar3(ch));
 }
 
 
@@ -33,7 +33,7 @@ int ferror(FILE *f) {
 
 
 void _ttywrch(int ch) {
-  sendchar(ch);
+  sendchar3(ch);
 }
 
 

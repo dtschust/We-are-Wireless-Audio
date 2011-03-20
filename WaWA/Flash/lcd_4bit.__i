@@ -1,1 +1,0 @@
--c --cpu ARM7TDMI -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\Philips" -o ".\Flash\lcd_4bit.o" --depend ".\Flash\lcd_4bit.d" "LCD_4bit.c"

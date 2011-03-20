@@ -10,46 +10,26 @@
 
 #include <LPC23xx.H>                     /* LPC23xx definitions               */
 #include "LCD.h" 
-//#define UART0                            /* Use UART 0 for printf             */
 
-/* If UART 0 is used for printf                                               */
-/*#ifdef UART0
-  #define UxFDR  U0FDR
-  #define UxLCR  U0LCR
-  #define UxDLL  U0DLL
-  #define UxDLM  U0DLM
-  #define UxLSR  U0LSR
-  #define UxTHR  U0THR
-  #define UxRBR  U0RBR*/
-/* If UART 1 is used for printf                                               */
-/*#elif defined(UART1)
-  #define UxFDR  U1FDR
-  #define UxLCR  U1LCR
-  #define UxDLL  U1DLL
-  #define UxDLM  U1DLM
-  #define UxLSR  U1LSR
-  #define UxTHR  U1THR
-  #define UxRBR  U1RBR
-#endif	*/
 extern       void LED_On (unsigned int num);
 extern       void LED_Off (unsigned int num);
 
-int getkey3 (void)  {                     /* Read character from Serial Port   */
+int getkey3 (void)  {                     /* Read character from Serial Port (UART3)   */
 
   while (!(U3LSR & 0x01));
 
   return (U3RBR);
 }
 
-int getkey (void)  {                     /* Read character from Serial Port   */
+int getkey0 (void)  {                     /* Read character from Serial Port (UART0)   */
 
   while (!(U0LSR & 0x01));
 
   return (U0RBR);
 }
-void int_serial (void) __irq {
+void int_serial0 (void) __irq {		/*UART0 receive interrupt*/
   short in;
-  in=getkey();
+  in=getkey0();
  
 	DACR= (in) << 9 | 0x00010000;  //shift 8! 6 + 2!
     VICVectAddr = 0;                    /* Acknowledge Interrupt               */
@@ -96,8 +76,8 @@ void init_serial (void)  {               /* Initialize Serial Interface       */
    // U0IER = 0x03;                       /* Enable RDA and THRE interrupts      */
 
    /*UART0 Interrupt*/
-       U0IER = 0x01;                       /* Enable RDA interrupts      */
-	VICVectAddr6 = (unsigned long)int_serial;     /* Set Interrupt Vector                */
+    U0IER = 0x01;                       /* Enable RDA interrupts      */
+	VICVectAddr6 = (unsigned long)int_serial0;     /* Set Interrupt Vector                */
     VICVectCntl6 = 6;                   /* use it for UART0 Interrupt          */
     VICIntEnable  = (1  << 6);          /* Enable Interrupt                    */
 
@@ -106,7 +86,7 @@ void init_serial (void)  {               /* Initialize Serial Interface       */
 
 
 /* Implementation of putchar (also used by printf function to output data)    */
-int sendchar (int ch)  {                 /* Write character to Serial Port    */
+int sendchar3 (int ch)  {                 /* Write character to Serial Port  (UART3)  */
 
   while (!(U3LSR & 0x20));
 
@@ -114,7 +94,7 @@ int sendchar (int ch)  {                 /* Write character to Serial Port    */
 }
 
 /* Implementation of putchar (also used by printf function to output data)    */
-int sendchar0 (int ch)  {                 /* Write character to Serial Port    */
+int sendchar0 (int ch)  {                 /* Write character to Serial Port (UART0)   */
 
   while (!(U0LSR & 0x20));
 
