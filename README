@@ -1,0 +1,7 @@
+Points of interest in the code:
+
+IRQ.c : All of the interrupt code.  Temporarily handles ADC and DAC (will be deprecated by I2S). Also handles timer interrupts for interfacing with the display.
+
+Serial.c : Handles all serial communications.  This includes XBee modules over UART0 and the display over UART3.
+
+WaWA.c : Main code block.  Initializes timers, displays, etc, and does most of the higher level processing. 
