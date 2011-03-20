@@ -1,0 +1,24 @@
+*** Creating Trace Output File '.\Flash\Blinky.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\flash\lpc2300.o"'
+### List of Objects: adding '".\flash\retarget.o"'
+### List of Objects: adding '".\flash\serial.o"'
+### List of Objects: adding '".\flash\blinky.o"'
+### List of Objects: adding '".\flash\lcd_4bit.o"'
+### List of Objects: adding '".\flash\irq.o"'
+### ADS-LD Command completed:
+--cpu ARM7TDMI ".\flash\lpc2300.o" ".\flash\retarget.o" ".\flash\serial.o" ".\flash\blinky.o" ".\flash\lcd_4bit.o" ".\flash\irq.o" --library_type=microlib --strict --scatter ".\Flash\Blinky.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Flash\Blinky.map" -o ".\Flash\Blinky.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\Flash\Blinky.axf'
+### ADS-LD Command File: '.\Flash\Blinky.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\Flash\Blinky.lnp', Handle=0x000002D8
+### Writing '.lnp' file
+### ADS-LD Command file '.\Flash\Blinky.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

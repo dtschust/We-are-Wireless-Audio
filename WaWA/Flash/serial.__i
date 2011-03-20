@@ -1,0 +1,1 @@
+-c --cpu ARM7TDMI -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\Philips" -o ".\Flash\serial.o" --depend ".\Flash\serial.d" "Serial.c"

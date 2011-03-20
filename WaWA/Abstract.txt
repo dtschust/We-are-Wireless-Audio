@@ -1,0 +1,27 @@
+The Blinky project is a simple program for the LPC2378
+using Keil 'MCB2300' Evaluation Board and demonstrating 
+interrupt functionality.
+
+Example functionality:                                                   
+ - Clock Settings:
+   - XTAL             = 12   MHz
+   - PLL              = 288  MHz
+   - processor clock  = 48   MHz
+   - USB clock        = 48   MHz
+   - peripheral clock = 12   MHz
+ - UART1 settings
+   (baudrate = 9600, 8 data bits, 1 stop bits, no parity)
+ - Timer0 timer is activating clock_1s every 1 second, 
+   starting AD conversion (every 1 ms) and displaying 
+   bargraph on 8 LEDs, it works in interrupt mode
+ - AD conversion is done in interrupt mode
+ - AD value is sent every 1 second on UART1
+ - text is displayed to textual LCD
+ - bargraph is displayed to textual LCD, according to 
+   potentiometer position
+ - 8 LEDs state represent the potentiometer position
+ 
+The Blinky program is available in different targets:
+  Simulator:       configured for software Simulator
+  MCB2300 Flash:   runs from Internal Flash located on chip
+                   (used for production or target debugging)
