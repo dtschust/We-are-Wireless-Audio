@@ -1,0 +1,24 @@
+*** Creating Trace Output File '.\Flash\WaWA.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\flash\lpc2300.o"'
+### List of Objects: adding '".\flash\retarget.o"'
+### List of Objects: adding '".\flash\serial.o"'
+### List of Objects: adding '".\flash\wawa.o"'
+### List of Objects: adding '".\flash\lcd_4bit.o"'
+### List of Objects: adding '".\flash\irq.o"'
+### ADS-LD Command completed:
+--cpu ARM7TDMI ".\flash\lpc2300.o" ".\flash\retarget.o" ".\flash\serial.o" ".\flash\wawa.o" ".\flash\lcd_4bit.o" ".\flash\irq.o" --library_type=microlib --strict --scatter ".\Flash\WaWA.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Flash\WaWA.map" -o ".\Flash\WaWA.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\Flash\WaWA.axf'
+### ADS-LD Command File: '.\Flash\WaWA.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\Flash\WaWA.lnp', Handle=0x00000300
+### Writing '.lnp' file
+### ADS-LD Command file '.\Flash\WaWA.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.
