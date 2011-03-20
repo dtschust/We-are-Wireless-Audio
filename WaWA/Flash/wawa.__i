@@ -1,0 +1,1 @@
+-c --cpu ARM7TDMI -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\Philips" -o ".\Flash\wawa.o" --depend ".\Flash\wawa.d" "C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\WaWA.c"

@@ -355,7 +355,7 @@ Image Symbol Table
     ../../microlib/printf/stubs.s            0x00000000   Number         0  stubs.o ABSOLUTE
     ../../microlib/stubs.s                   0x00000000   Number         0  iusefp.o ABSOLUTE
     ../../microlib/stubs.s                   0x00000000   Number         0  useno.o ABSOLUTE
-    C:\Keil\ARM\Boards\Keil\MCB2300\WaWA\WaWA.c 0x00000000   Number         0  wawa.o ABSOLUTE
+    C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\WaWA.c 0x00000000   Number         0  wawa.o ABSOLUTE
     IRQ.c                                    0x00000000   Number         0  irq.o ABSOLUTE
     LCD_4bit.c                               0x00000000   Number         0  lcd_4bit.o ABSOLUTE
     LPC2300.s                                0x00000000   Number         0  lpc2300.o ABSOLUTE
@@ -584,10 +584,10 @@ Image component sizes
        356         48          0          0       1288        300   lpc2300.o
         72          0          0          4          0       3980   retarget.o
        456         16          0          0          0       1246   serial.o
-       876        120          0          9          0       1548   wawa.o
+       876        120          0          9          0       1584   wawa.o
 
     ----------------------------------------------------------------------
-      2736        224         96         24       1288      11421   Object Totals
+      2736        224         96         24       1288      11457   Object Totals
          8          0         32          0          0          0   (incl. Generated)
          0          0          0          4          0          1   (incl. Padding)
 
@@ -624,8 +624,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3284        254         96         24       1288      11436   Grand Totals
-      3284        254         96         24       1288      11436   ELF Image Totals
+      3284        254         96         24       1288      11472   Grand Totals
+      3284        254         96         24       1288      11472   ELF Image Totals
       3284        254         96         24          0          0   ROM Totals
 
 ==============================================================================

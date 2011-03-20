@@ -1,4 +1,4 @@
-/* WaWA.c : Wireless Audio System
+/* WaWA.c : Wireless Audio System	   */
 /******************************************************************************/
                   
 #include <stdio.h>

@@ -7,3 +7,78 @@ C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\WaWA.uvproj
 Project File Date:  03/20/2011
 
 <h2>Output:</h2>
+Build target 'LPC2378 Flash'
+compiling Serial.c...
+Serial.c(10): error:  #77-D: this declaration has no storage class or type specifier
+Serial.c:   a
+Serial.c:   ^
+LCD.h(12): error:  #65: expected a ";"
+LCD.h:   extern void lcd_init    (void);
+LCD.h:   ^
+LCD.h: Serial.c: 0 warnings, 2 errors
+compiling WaWA.c...
+C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\WaWA.c(3): error:  #77-D: this declaration has no storage class or type specifier
+C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\WaWA.c:   a                  
+C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\WaWA.c:   ^
+C:\Keil\ARM\RV31\INC\stdio.h(37): error:  #65: expected a ";"
+C:\Keil\ARM\RV31\INC\stdio.h:     typedef unsigned int size_t;   /* see <stddef.h> */
+C:\Keil\ARM\RV31\INC\stdio.h:     ^
+C:\Keil\ARM\RV31\INC\stdio.h(311): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:                      int /*mode*/, size_t /*size*/) __attribute__((__nonnull__(1)));
+C:\Keil\ARM\RV31\INC\stdio.h:                                    ^
+C:\Keil\ARM\RV31\INC\stdio.h(394): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:   extern _ARMABI int snprintf(char * __restrict /*s*/, size_t /*n*/,
+C:\Keil\ARM\RV31\INC\stdio.h:                                                        ^
+C:\Keil\ARM\RV31\INC\stdio.h(415): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:   extern _ARMABI int _snprintf(char * __restrict /*s*/, size_t /*n*/,
+C:\Keil\ARM\RV31\INC\stdio.h:                                                         ^
+C:\Keil\ARM\RV31\INC\stdio.h(548): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:   extern _ARMABI int vsnprintf(char * __restrict /*s*/, size_t /*n*/,
+C:\Keil\ARM\RV31\INC\stdio.h:                                                         ^
+C:\Keil\ARM\RV31\INC\stdio.h(574): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:   extern _ARMABI int _vsnprintf(char * __restrict /*s*/, size_t /*n*/,
+C:\Keil\ARM\RV31\INC\stdio.h:                                                          ^
+C:\Keil\ARM\RV31\INC\stdio.h(710): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:   extern _ARMABI size_t fread(void * __restrict /*ptr*/,
+C:\Keil\ARM\RV31\INC\stdio.h:                  ^
+C:\Keil\ARM\RV31\INC\stdio.h(711): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:                       size_t /*size*/, size_t /*nmemb*/, FILE * __restrict /*stream*/) __attribute__((__nonnull__(1,4)));
+C:\Keil\ARM\RV31\INC\stdio.h:                       ^
+C:\Keil\ARM\RV31\INC\stdio.h(711): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:                       size_t /*size*/, size_t /*nmemb*/, FILE * __restrict /*stream*/) __attribute__((__nonnull__(1,4)));
+C:\Keil\ARM\RV31\INC\stdio.h:                                        ^
+C:\Keil\ARM\RV31\INC\stdio.h(726): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:   extern _ARMABI size_t __fread_bytes_avail(void * __restrict /*ptr*/,
+C:\Keil\ARM\RV31\INC\stdio.h:                  ^
+C:\Keil\ARM\RV31\INC\stdio.h(727): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:                       size_t /*count*/, FILE * __restrict /*stream*/) __attribute__((__nonnull__(1,3)));
+C:\Keil\ARM\RV31\INC\stdio.h:                       ^
+C:\Keil\ARM\RV31\INC\stdio.h(742): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:   extern _ARMABI size_t fwrite(const void * __restrict /*ptr*/,
+C:\Keil\ARM\RV31\INC\stdio.h:                  ^
+C:\Keil\ARM\RV31\INC\stdio.h(743): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:                       size_t /*size*/, size_t /*nmemb*/, FILE * __restrict /*stream*/) __attribute__((__nonnull__(1,4)));
+C:\Keil\ARM\RV31\INC\stdio.h:                       ^
+C:\Keil\ARM\RV31\INC\stdio.h(743): error:  #20: identifier "size_t" is undefined
+C:\Keil\ARM\RV31\INC\stdio.h:                       size_t /*size*/, size_t /*nmemb*/, FILE * __restrict /*stream*/) __attribute__((__nonnull__(1,4)));
+C:\Keil\ARM\RV31\INC\stdio.h:                                        ^
+C:\Keil\ARM\RV31\INC\stdio.h: C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\WaWA.c: 0 warnings, 15 errors
+compiling IRQ.c...
+IRQ.c(10): error:  #77-D: this declaration has no storage class or type specifier
+IRQ.c:   a
+IRQ.c:   ^
+IRQ.c(14): error:  #65: expected a ";"
+IRQ.c:   short AD_last;                          /* Last converted value               */
+IRQ.c:   ^
+IRQ.c(49): error:  #20: identifier "AD_last" is undefined
+IRQ.c:     AD_last = (AD0DR0 >> 6) & 0x3FF;      /* Read Conversion Result             */
+IRQ.c:     ^
+IRQ.c: IRQ.c: 0 warnings, 3 errors
+Target not created
+Build target 'LPC2378 Flash'
+compiling Serial.c...
+compiling WaWA.c...
+compiling IRQ.c...
+linking...
+Program Size: Code=3284 RO-data=96 RW-data=24 ZI-data=1288  
+".\Flash\WaWA.axf" - 0 Error(s), 0 Warning(s).

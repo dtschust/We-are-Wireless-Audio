@@ -408,10 +408,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>52</ColumnNumber>
+      <ColumnNumber>35</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>64</TopLine>
-      <CurrentLine>64</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Serial.c</PathWithFileName>
       <FilenameWithoutPath>Serial.c</FilenameWithoutPath>
@@ -429,12 +429,12 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>13</ColumnNumber>
+      <ColumnNumber>26</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>126</TopLine>
-      <CurrentLine>154</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>20</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>C:\Keil\ARM\Boards\Keil\MCB2300\WaWA\WaWA.c</PathWithFileName>
+      <PathWithFileName>C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\WaWA.c</PathWithFileName>
       <FilenameWithoutPath>WaWA.c</FilenameWithoutPath>
     </File>
     <File>
@@ -1851,27 +1851,9 @@
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
-          <Name>C:\Keil\ARM\Boards\Keil\MCB2300\WaWA\WaWA.c</Name>
-          <ColumnNumber>13</ColumnNumber>
-          <TopLine>126</TopLine>
-          <CurrentLine>154</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\Serial.c</Name>
-          <ColumnNumber>52</ColumnNumber>
-          <TopLine>64</TopLine>
-          <CurrentLine>64</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\IRQ.c</Name>
-          <ColumnNumber>38</ColumnNumber>
-          <TopLine>13</TopLine>
-          <CurrentLine>46</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\Retarget.c</Name>
-          <ColumnNumber>36</ColumnNumber>
-          <TopLine>3</TopLine>
+          <Name>C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\WaWA.c</Name>
+          <ColumnNumber>26</ColumnNumber>
+          <TopLine>1</TopLine>
           <CurrentLine>20</CurrentLine>
         </Doc>
       </Documents>
