@@ -3,7 +3,7 @@
                   
 #include <stdio.h>
 #include <LPC23xx.H>                    /* LPC23xx definitions                */
-#include "LCD.h"                        /* Graphic LCD function prototypes    */
+//#include "LCD.h"                        /* Graphic LCD function prototypes    */
 
 
 /* Import external IRQ handlers from IRQ.c file                               */
@@ -21,10 +21,12 @@ extern       int getkey0    (void);
 /* Import external variables from IRQ.c file                                  */
 extern short AD_last;
 extern unsigned char clock_1s;
+extern int currentButton;
 
 int in;
 char out;
-int volume=5;
+int volume;
+
 
 /* Function that initializes LEDs                                             */
 void LED_Init(void) {
@@ -57,11 +59,18 @@ void display_init(void)
   FIO3DIR = 1 << 1 ; //pin configured as output
   FIO3CLR =1<<1 ; // pin goes Low.
 
+  //Let's setup the volume input pins! P3[2-4]
+
+  PINSEL6 &=		 0xFFFFFC0F ;	 // Configure all 3 pins as I/O
+  //FIO3DIR = 0;				(Already done above?)         // Configure all 3 pins as input
+
   //set nReset to low.
+  LED_On(3);
   while (clock_1s ==0);
   clock_1s=0;
   while (clock_1s ==1);
   while (clock_1s ==0);
+  LED_Off(3);
   clock_1s=0;
   //set nReset to high
   FIO3SET =1<<1; //pin goes High
@@ -72,34 +81,72 @@ void display_init(void)
   in = getkey3();
   if (in != 6)
   {	   
-    lcd_clear();
-	lcd_print("display_init error");
+    //We have a problem, ack was not received properly!
   }
 
-	T1TCR         = 0;                           /* Timer1 Disable               */
+    
   /*Initialization complete*/
   //Set a black background
   sendchar3(0x42);
   sendchar3(0xFF);
   sendchar3(0xFF);
   in = getkey3();
-  /*Formatted text*/
+  
+
+}
+
+void preprint(void)
+{
+  sendchar3(0x4F);		//Set as opaque background
+  sendchar3(0x01);		//Set as opaque background
   sendchar3(0x73);
   sendchar3(0x03);
   sendchar3(0x04);
   sendchar3(0x02);
   sendchar3(0x00);
-  sendchar3(0x00);	 
-  printf("Volume=%d", volume);
   sendchar3(0x00);
+}
+
+void checkVolumeChange(void)
+{
+  static int lastButton;
+  if ((lastButton & 0x1C)!= (currentButton & 0x1C))	 //If any of the 3 inputs changed
+
+  {	
+    if ( (lastButton&0x4) != (currentButton&0x4) && (currentButton&0x4) != 0x4)
+    {
+       volume++;
+    } 
+    else if ( (lastButton&0x8) != (currentButton&0x8 && (currentButton&0x8) !=0x8))
+    {
+      volume--;
+    }
+    else if ( (lastButton&0x10) != (currentButton&0x10) && (currentButton&0x10) !=0x10)
+    {
+      volume = 0;
+    }
+	   	
+    else
+    {
+	  //This occurs on press of button instead of release.  Do nothing here
+    }	  
+  }
+  if (volume <0)
+  {
+    volume=0;
+  }
+  else if (volume > 11)
+  {
+    volume=11;
+  }
+  lastButton = currentButton;
 
 }
 
-
 int main (void) {
-
+  int lastVolume;
   LED_Init();                           /* LED Initialization                 */
-
+  volume=5;
    /* Enable and setup timer interrupt, start timer                            */
   //T0MR0         = 11999;                       /* 1msec = 12000-1 at 12.0 MHz */
   T0MR0         = 299;                       /* 0.25msec = 300-1 at 12.0 MHz */
@@ -112,7 +159,7 @@ int main (void) {
   /* Enable and setup timer interrupt (useful for communicating with display)*/
   T1MR0         = 11999;                       /* 1msec = 12000-1 at 12.0 MHz */
   T1MCR         = 3;                           /* Interrupt and Reset on MR0  */
-  //T1TCR         = 1;                           /* Timer0 Enable   (not yet!)            */
+  T1TCR         = 1;                           /* Timer1 Enable            */
   VICVectAddr5  = (unsigned long)T0_IRQHandler2;/* Set Interrupt Vector        */
   VICVectCntl5  = 16;                          /* use it for Timer0 Interrupt */
   VICIntEnable  = (1  << 5);                   /* Enable Timer0 Interrupt     */ 
@@ -129,17 +176,11 @@ int main (void) {
 
   init_serial();                               /* Init UART                   */
  
-  lcd_init();
-  lcd_clear();
-  lcd_print ("Wireless Audio!");
-  set_cursor (0, 1);
-  lcd_print ("WaWA");
+
 
 
   /*Initialize the display*/
   display_init();
-
-
   T0TCR         = 1;                           /* Timer0 Enable (Start A-D conversions!)              */
   while (1) {                           /* Loop forever                       */
    /* Audio Code*/
@@ -147,8 +188,17 @@ int main (void) {
     sendchar0(out);
 	/*End Audio Code*/
 
+    /*Volume control*/
+    checkVolumeChange();
 
-
+	if (lastVolume != volume)
+	{
+       preprint();
+	   printf("Volume: %2d",volume);
+	   sendchar3(0x00);
+	}
+	lastVolume=volume;	  
+    /*End Volume control*/
 
 	/*Deprecated Code! Now goes in IRQ*/
 	//in = getkey0();

@@ -9,7 +9,7 @@
 /******************************************************************************/
 
 #include <LPC23xx.H>                     /* LPC23xx definitions               */
-#include "LCD.h" 
+//#include "LCD.h" 
 
 extern       void LED_On (unsigned int num);
 extern       void LED_Off (unsigned int num);
@@ -50,25 +50,31 @@ void init_serial (void)  {               /* Initialize Serial Interface       */
 //	PINSEL1 |= 0xF<<18; 				 /*Enable RxD3 and TxD3*/
     PINSEL9 |= 0xF<<24;
 
-  U0FDR    = 0;                          /* Fractional divider not used       */
+  //U0FDR    = 0;                          /* Fractional divider not used       */
   U0LCR    = 0x83;                       /* 8 bits, no Parity, 1 Stop bit     */
   //U0DLL    = 78;                         /* 9600 Baud Rate @ 12.0 MHZ PCLK    */
-  U0DLL    = 13;                         /* 57600 Baud Rate @ 12.0 MHZ PCLK    */
+  //U0DLL    = 13;                         /* 57600 Baud Rate @ 12.0 MHZ PCLK    */
+  U0DLL = 3; /*115200 Baud Rate*/
+  U0FDR = 0x67	   ;
   U0DLM    = 0;                          /* High divisor latch = 0            */
   U0LCR    = 0x03;                       /* DLAB = 0                          */
 
 
-  U1FDR    = 0;                          /* Fractional divider not used       */
+  //U1FDR    = 0;                          /* Fractional divider not used       */
   U1LCR    = 0x83;                       /* 8 bits, no Parity, 1 Stop bit     */
   //U1DLL    = 78;                         /* 9600 Baud Rate @ 12.0 MHZ PCLK    */
-  U1DLL    = 13;                         /* 57600 Baud Rate @ 12.0 MHZ PCLK    */
+  //U1DLL    = 13;                         /* 57600 Baud Rate @ 12.0 MHZ PCLK    */
+  U1DLL = 3; /*115200 Baud Rate*/
+  U1FDR = 0x67 ;
   U1DLM    = 0;                          /* High divisor latch = 0            */
   U1LCR    = 0x03;                       /* DLAB = 0                          */
 
-  U3FDR    = 0;                          /* Fractional divider not used       */
+  //U3FDR    = 0;                          /* Fractional divider not used       */
   U3LCR    = 0x83;                       /* 8 bits, no Parity, 1 Stop bit     */
   //U0DLL    = 78;                         /* 9600 Baud Rate @ 12.0 MHZ PCLK    */
-  U3DLL    = 13;                         /* 57600 Baud Rate @ 12.0 MHZ PCLK    */
+  //U3DLL    = 13;                         /* 57600 Baud Rate @ 12.0 MHZ PCLK    */
+  U3DLL = 3; /*115200 Baud Rate*/
+  U3FDR = 0x67	;
   U3DLM    = 0;                          /* High divisor latch = 0            */
   U3LCR    = 0x03;                       /* DLAB = 0                          */
    
