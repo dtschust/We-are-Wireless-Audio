@@ -14,7 +14,7 @@ Section Cross References
     wawa.o(.text) refers to irq.o(.text) for T0_IRQHandler
     lcd_4bit.o(.text) refers to lcd_4bit.o(.constdata) for UserFont
     irq.o(.text) refers to idiv.o(.text) for __aeabi_idivmod
-    irq.o(.text) refers to irq.o(.data) for .data
+    irq.o(.text) refers to irq.o(.data) for I2SRX
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7.o(.ARM.Collect$$$$00000007) for _main_init
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
@@ -332,34 +332,34 @@ Image Symbol Table
 
     RESET                                    0x00000000   Section      356  lpc2300.o(RESET)
     ../../microlib/division.c                0x00000000   Number         0  uldiv.o ABSOLUTE
-    ../../microlib/division.c                0x00000000   Number         0  idiv.o ABSOLUTE
     ../../microlib/division.c                0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../../microlib/division.c                0x00000000   Number         0  idiv.o ABSOLUTE
     ../../microlib/fpadd.c                   0x00000000   Number         0  dadd.o ABSOLUTE
     ../../microlib/fpdiv.c                   0x00000000   Number         0  ddiv.o ABSOLUTE
     ../../microlib/fpepilogue.c              0x00000000   Number         0  depilogue.o ABSOLUTE
     ../../microlib/fpfix.c                   0x00000000   Number         0  dfixul.o ABSOLUTE
     ../../microlib/fpmul.c                   0x00000000   Number         0  dmul.o ABSOLUTE
-    ../../microlib/init/entry.s              0x00000000   Number         0  entry2.o ABSOLUTE
-    ../../microlib/init/entry.s              0x00000000   Number         0  entry5.o ABSOLUTE
-    ../../microlib/init/entry.s              0x00000000   Number         0  entry.o ABSOLUTE
     ../../microlib/init/entry.s              0x00000000   Number         0  entry7.o ABSOLUTE
-    ../../microlib/longlong.c                0x00000000   Number         0  llshl.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry5.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry2.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry.o ABSOLUTE
     ../../microlib/longlong.c                0x00000000   Number         0  llsshr.o ABSOLUTE
     ../../microlib/longlong.c                0x00000000   Number         0  llushr.o ABSOLUTE
-    ../../microlib/printf/printf.c           0x00000000   Number         0  printfb.o ABSOLUTE
+    ../../microlib/longlong.c                0x00000000   Number         0  llshl.o ABSOLUTE
     ../../microlib/printf/printf.c           0x00000000   Number         0  printf8.o ABSOLUTE
-    ../../microlib/printf/printf.c           0x00000000   Number         0  printf4.o ABSOLUTE
-    ../../microlib/printf/printf.c           0x00000000   Number         0  printfa.o ABSOLUTE
     ../../microlib/printf/printf.c           0x00000000   Number         0  printf0.o ABSOLUTE
     ../../microlib/printf/printf.c           0x00000000   Number         0  printf1.o ABSOLUTE
     ../../microlib/printf/printf.c           0x00000000   Number         0  printf7.o ABSOLUTE
     ../../microlib/printf/printf.c           0x00000000   Number         0  printf2.o ABSOLUTE
     ../../microlib/printf/printf.c           0x00000000   Number         0  printf3.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printf4.o ABSOLUTE
     ../../microlib/printf/printf.c           0x00000000   Number         0  printf5.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printfa.o ABSOLUTE
     ../../microlib/printf/printf.c           0x00000000   Number         0  printf6.o ABSOLUTE
+    ../../microlib/printf/printf.c           0x00000000   Number         0  printfb.o ABSOLUTE
     ../../microlib/printf/stubs.s            0x00000000   Number         0  stubs.o ABSOLUTE
-    ../../microlib/stubs.s                   0x00000000   Number         0  iusefp.o ABSOLUTE
     ../../microlib/stubs.s                   0x00000000   Number         0  useno.o ABSOLUTE
+    ../../microlib/stubs.s                   0x00000000   Number         0  iusefp.o ABSOLUTE
     C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\WaWA.c 0x00000000   Number         0  wawa.o ABSOLUTE
     IRQ.c                                    0x00000000   Number         0  irq.o ABSOLUTE
     LCD_4bit.c                               0x00000000   Number         0  lcd_4bit.o ABSOLUTE
@@ -384,31 +384,33 @@ Image Symbol Table
     __lit__00000000                          0x00000178   Data           4  entry2.o(.ARM.Collect$$$$00002712)
     .text                                    0x0000017c   Section        0  retarget.o(.text)
     .text                                    0x000001c4   Section        0  serial.o(.text)
-    .text                                    0x0000038c   Section        0  wawa.o(.text)
-    .text                                    0x00000860   Section        0  irq.o(.text)
-    .text                                    0x00000974   Section        0  idiv.o(.text)
-    .text                                    0x000009a0   Section        0  uidiv.o(.text)
-    .text                                    0x000009d8   Section       32  init.o(.text)
-    i.__0printf$6                            0x00000a08   Section        0  printf6.o(i.__0printf$6)
-    i.__ARM_common_call_via_r2               0x00000a28   Section        0  printf1.o(i.__ARM_common_call_via_r2)
-    i.__ARM_common_call_via_r3               0x00000a2a   Section        2  init.o(i.__ARM_common_call_via_r3)
-    i.__ARM_common_call_via_r6               0x00000a2c   Section        0  printfb.o(i.__ARM_common_call_via_r6)
-    i.__scatterload_copy                     0x00000a30   Section       24  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00000a48   Section        4  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00000a4c   Section       24  handlers.o(i.__scatterload_zeroinit)
-    i._printf_core                           0x00000a64   Section        0  printf6.o(i._printf_core)
-    _printf_core                             0x00000a65   Thumb Code   790  printf6.o(i._printf_core)
-    i._printf_post_padding                   0x00000d80   Section        0  printf6.o(i._printf_post_padding)
-    _printf_post_padding                     0x00000d81   Thumb Code    38  printf6.o(i._printf_post_padding)
-    i._printf_pre_padding                    0x00000da6   Section        0  printf6.o(i._printf_pre_padding)
-    _printf_pre_padding                      0x00000da7   Thumb Code    48  printf6.o(i._printf_pre_padding)
+    .text                                    0x0000039c   Section        0  wawa.o(.text)
+    .text                                    0x00000964   Section        0  irq.o(.text)
+    .text                                    0x00000b9c   Section        0  idiv.o(.text)
+    .text                                    0x00000bc8   Section        0  uidiv.o(.text)
+    .text                                    0x00000c00   Section       32  init.o(.text)
+    i.__0printf$6                            0x00000c30   Section        0  printf6.o(i.__0printf$6)
+    i.__ARM_common_call_via_r2               0x00000c50   Section        0  printf1.o(i.__ARM_common_call_via_r2)
+    i.__ARM_common_call_via_r3               0x00000c52   Section        2  init.o(i.__ARM_common_call_via_r3)
+    i.__ARM_common_call_via_r6               0x00000c54   Section        0  printfb.o(i.__ARM_common_call_via_r6)
+    i.__scatterload_copy                     0x00000c58   Section       24  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000c70   Section        4  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000c74   Section       24  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x00000c8c   Section        0  printf6.o(i._printf_core)
+    _printf_core                             0x00000c8d   Thumb Code   790  printf6.o(i._printf_core)
+    i._printf_post_padding                   0x00000fa8   Section        0  printf6.o(i._printf_post_padding)
+    _printf_post_padding                     0x00000fa9   Thumb Code    38  printf6.o(i._printf_post_padding)
+    i._printf_pre_padding                    0x00000fce   Section        0  printf6.o(i._printf_pre_padding)
+    _printf_pre_padding                      0x00000fcf   Thumb Code    48  printf6.o(i._printf_pre_padding)
     .data                                    0x40000000   Section        4  retarget.o(.data)
-    .data                                    0x40000004   Section       16  wawa.o(.data)
+    .data                                    0x40000004   Section       20  wawa.o(.data)
     lastButton                               0x40000004   Data           4  wawa.o(.data)
-    .data                                    0x40000014   Section       12  irq.o(.data)
-    clk_cntr                                 0x40000014   Data           4  irq.o(.data)
-    STACK                                    0x40000020   Section     1288  lpc2300.o(STACK)
-    Stack_Top                                0x40000528   Data           0  lpc2300.o(STACK)
+    .data                                    0x40000018   Section       28  irq.o(.data)
+    clk_cntr                                 0x4000001c   Data           4  irq.o(.data)
+    yesno                                    0x40000020   Data           4  irq.o(.data)
+    clk_cntr                                 0x40000024   Data           4  irq.o(.data)
+    STACK                                    0x40000038   Section     1288  lpc2300.o(STACK)
+    Stack_Top                                0x40000540   Data           0  lpc2300.o(STACK)
 
     Global Symbols
 
@@ -479,49 +481,53 @@ Image Symbol Table
     getkey3                                  0x000001c4   ARM Code      32  serial.o(.text)
     getkey0                                  0x000001e4   ARM Code      32  serial.o(.text)
     int_serial0                              0x00000204   ARM Code      48  serial.o(.text)
-    init_serial                              0x00000234   ARM Code     264  serial.o(.text)
-    sendchar3                                0x0000033c   ARM Code      32  serial.o(.text)
-    sendchar0                                0x0000035c   ARM Code      32  serial.o(.text)
-    LED_Init                                 0x0000038c   ARM Code      36  wawa.o(.text)
-    LED_On                                   0x000003b0   ARM Code      20  wawa.o(.text)
-    LED_Off                                  0x000003c4   ARM Code      20  wawa.o(.text)
-    LED_Out                                  0x000003d8   ARM Code      24  wawa.o(.text)
-    display_init                             0x000003f0   ARM Code     300  wawa.o(.text)
-    preprint                                 0x0000051c   ARM Code      76  wawa.o(.text)
-    checkVolumeChange                        0x00000568   ARM Code     344  wawa.o(.text)
-    main                                     0x000006c0   ARM Code     332  wawa.o(.text)
-    T0_IRQHandler                            0x00000860   ARM Code      52  irq.o(.text)
-    T0_IRQHandler2                           0x00000894   ARM Code     140  irq.o(.text)
-    ADC_IRQHandler                           0x00000920   ARM Code      44  irq.o(.text)
-    Inline ARM to Thumb Veneer to __aeabi_idivmod 0x0000096c   ARM Code       8  idiv.o(.text)
-    __aeabi_idiv                             0x00000975   Thumb Code     0  idiv.o(.text)
-    __aeabi_idivmod                          0x00000975   Thumb Code    44  idiv.o(.text)
-    __aeabi_uidiv                            0x000009a1   Thumb Code     0  uidiv.o(.text)
-    __aeabi_uidivmod                         0x000009a1   Thumb Code    46  uidiv.o(.text)
-    Inline ARM to Thumb Veneer to __scatterload 0x000009d0   ARM Code       8  init.o(.text)
-    __scatterload                            0x000009d9   Thumb Code    24  init.o(.text)
-    __scatterload_rt2                        0x000009d9   Thumb Code     0  init.o(.text)
-    Short Thumb to ARM Veneer to __main_after_scatterload 0x000009f9   Thumb Code     8  anon$$obj.o(Veneer$$Code)
-    Inline ARM to Thumb Veneer to __2printf  0x00000a00   ARM Code       8  printf6.o(i.__0printf$6)
-    __0printf$6                              0x00000a09   Thumb Code    24  printf6.o(i.__0printf$6)
-    __1printf$6                              0x00000a09   Thumb Code     0  printf6.o(i.__0printf$6)
-    __2printf                                0x00000a09   Thumb Code     0  printf6.o(i.__0printf$6)
-    __ARM_common_call_via_r2                 0x00000a29   Thumb Code     2  printf1.o(i.__ARM_common_call_via_r2)
-    __ARM_common_call_via_r3                 0x00000a2b   Thumb Code     2  init.o(i.__ARM_common_call_via_r3)
-    __ARM_common_call_via_r6                 0x00000a2d   Thumb Code     2  printfb.o(i.__ARM_common_call_via_r6)
-    __scatterload_copy                       0x00000a30   ARM Code      24  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00000a48   ARM Code       4  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00000a4c   ARM Code      24  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x00000dd8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000df8   Number         0  anon$$obj.o(Region$$Table)
+    init_serial                              0x00000234   ARM Code     280  serial.o(.text)
+    sendchar3                                0x0000034c   ARM Code      32  serial.o(.text)
+    sendchar0                                0x0000036c   ARM Code      32  serial.o(.text)
+    LED_Init                                 0x0000039c   ARM Code      36  wawa.o(.text)
+    LED_On                                   0x000003c0   ARM Code      20  wawa.o(.text)
+    LED_Off                                  0x000003d4   ARM Code      20  wawa.o(.text)
+    LED_Out                                  0x000003e8   ARM Code      24  wawa.o(.text)
+    display_init                             0x00000400   ARM Code     324  wawa.o(.text)
+    preprint                                 0x00000544   ARM Code      76  wawa.o(.text)
+    checkVolumeChange                        0x00000590   ARM Code     480  wawa.o(.text)
+    main                                     0x00000770   ARM Code     412  wawa.o(.text)
+    I2S_IRQHandler                           0x00000964   ARM Code     100  irq.o(.text)
+    T0_IRQHandler                            0x000009c8   ARM Code     176  irq.o(.text)
+    T0_IRQHandler2                           0x00000a78   ARM Code     188  irq.o(.text)
+    ADC_IRQHandler                           0x00000b34   ARM Code      44  irq.o(.text)
+    Inline ARM to Thumb Veneer to __aeabi_idivmod 0x00000b94   ARM Code       8  idiv.o(.text)
+    __aeabi_idiv                             0x00000b9d   Thumb Code     0  idiv.o(.text)
+    __aeabi_idivmod                          0x00000b9d   Thumb Code    44  idiv.o(.text)
+    __aeabi_uidiv                            0x00000bc9   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x00000bc9   Thumb Code    46  uidiv.o(.text)
+    Inline ARM to Thumb Veneer to __scatterload 0x00000bf8   ARM Code       8  init.o(.text)
+    __scatterload                            0x00000c01   Thumb Code    24  init.o(.text)
+    __scatterload_rt2                        0x00000c01   Thumb Code     0  init.o(.text)
+    Short Thumb to ARM Veneer to __main_after_scatterload 0x00000c21   Thumb Code     8  anon$$obj.o(Veneer$$Code)
+    Inline ARM to Thumb Veneer to __2printf  0x00000c28   ARM Code       8  printf6.o(i.__0printf$6)
+    __0printf$6                              0x00000c31   Thumb Code    24  printf6.o(i.__0printf$6)
+    __1printf$6                              0x00000c31   Thumb Code     0  printf6.o(i.__0printf$6)
+    __2printf                                0x00000c31   Thumb Code     0  printf6.o(i.__0printf$6)
+    __ARM_common_call_via_r2                 0x00000c51   Thumb Code     2  printf1.o(i.__ARM_common_call_via_r2)
+    __ARM_common_call_via_r3                 0x00000c53   Thumb Code     2  init.o(i.__ARM_common_call_via_r3)
+    __ARM_common_call_via_r6                 0x00000c55   Thumb Code     2  printfb.o(i.__ARM_common_call_via_r6)
+    __scatterload_copy                       0x00000c58   ARM Code      24  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000c70   ARM Code       4  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000c74   ARM Code      24  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x00001000   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00001020   Number         0  anon$$obj.o(Region$$Table)
     __stdout                                 0x40000000   Data           4  retarget.o(.data)
     in                                       0x40000008   Data           4  wawa.o(.data)
     out                                      0x4000000c   Data           1  wawa.o(.data)
     volume                                   0x40000010   Data           4  wawa.o(.data)
-    AD_last                                  0x40000018   Data           2  irq.o(.data)
-    clock_1s                                 0x4000001a   Data           1  irq.o(.data)
-    currentButton                            0x4000001c   Data           4  irq.o(.data)
-    __initial_sp                             0x40000420   Data         264  lpc2300.o(STACK)
+    lastonoff                                0x40000014   Data           4  wawa.o(.data)
+    I2SRX                                    0x40000018   Data           4  irq.o(.data)
+    AD_last                                  0x40000028   Data           2  irq.o(.data)
+    clock_1s                                 0x4000002a   Data           1  irq.o(.data)
+    currentButton                            0x4000002c   Data           4  irq.o(.data)
+    voiceCode                                0x40000030   Data           4  irq.o(.data)
+    __initial_sp                             0x40000438   Data         264  lpc2300.o(STACK)
 
 
 
@@ -531,9 +537,9 @@ Memory Map of the image
 
   Image Entry point : 0x00000164
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000e18, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00001054, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00000df8, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00001020, Max: 0x00080000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -544,40 +550,41 @@ Memory Map of the image
     0x0000016c   0x0000000c   Code   RO          369    .ARM.Collect$$$$00000007  entry7.o(mc_t.l)
     0x00000178   0x00000004   Code   RO          367    .ARM.Collect$$$$00002712  entry2.o(mc_t.l)
     0x0000017c   0x00000048   Code   RO            8    .text               retarget.o
-    0x000001c4   0x000001c8   Code   RO           31    .text               serial.o
-    0x0000038c   0x000004d4   Code   RO           46    .text               wawa.o
-    0x00000860   0x0000010c   Code   RO           81    .text               irq.o
-    0x0000096c   0x00000008   Ven    RO           99    .text               idiv.o(mc_t.l)
-    0x00000974   0x0000002c   Code   RO           99    .text               idiv.o(mc_t.l)
-    0x000009a0   0x0000002e   Code   RO          370    .text               uidiv.o(mc_t.l)
-    0x000009ce   0x00000002   PAD
-    0x000009d0   0x00000008   Ven    RO          385    .text               init.o(mc_t.l)
-    0x000009d8   0x00000020   Code   RO          385    .text               init.o(mc_t.l)
-    0x000009f8   0x00000008   Ven    RO          410    Veneer$$Code        anon$$obj.o
-    0x00000a00   0x00000008   Ven    RO          260    i.__0printf$6       printf6.o(mc_t.l)
-    0x00000a08   0x00000020   Code   RO          260    i.__0printf$6       printf6.o(mc_t.l)
-    0x00000a28   0x00000002   Code   RO          169    i.__ARM_common_call_via_r2  printf1.o(mc_t.l)
-    0x00000a2a   0x00000002   Code   RO          387    i.__ARM_common_call_via_r3  init.o(mc_t.l)
-    0x00000a2c   0x00000002   Code   RO          123    i.__ARM_common_call_via_r6  printfb.o(mc_t.l)
-    0x00000a2e   0x00000002   PAD
-    0x00000a30   0x00000018   Code   RO          401    i.__scatterload_copy  handlers.o(mc_t.l)
-    0x00000a48   0x00000004   Code   RO          402    i.__scatterload_null  handlers.o(mc_t.l)
-    0x00000a4c   0x00000018   Code   RO          403    i.__scatterload_zeroinit  handlers.o(mc_t.l)
-    0x00000a64   0x0000031c   Code   RO          267    i._printf_core      printf6.o(mc_t.l)
-    0x00000d80   0x00000026   Code   RO          268    i._printf_post_padding  printf6.o(mc_t.l)
-    0x00000da6   0x00000030   Code   RO          269    i._printf_pre_padding  printf6.o(mc_t.l)
-    0x00000dd6   0x00000002   PAD
-    0x00000dd8   0x00000020   Data   RO          399    Region$$Table       anon$$obj.o
+    0x000001c4   0x000001d8   Code   RO           31    .text               serial.o
+    0x0000039c   0x000005c8   Code   RO           46    .text               wawa.o
+    0x00000964   0x00000230   Code   RO           81    .text               irq.o
+    0x00000b94   0x00000008   Ven    RO           99    .text               idiv.o(mc_t.l)
+    0x00000b9c   0x0000002c   Code   RO           99    .text               idiv.o(mc_t.l)
+    0x00000bc8   0x0000002e   Code   RO          370    .text               uidiv.o(mc_t.l)
+    0x00000bf6   0x00000002   PAD
+    0x00000bf8   0x00000008   Ven    RO          385    .text               init.o(mc_t.l)
+    0x00000c00   0x00000020   Code   RO          385    .text               init.o(mc_t.l)
+    0x00000c20   0x00000008   Ven    RO          410    Veneer$$Code        anon$$obj.o
+    0x00000c28   0x00000008   Ven    RO          260    i.__0printf$6       printf6.o(mc_t.l)
+    0x00000c30   0x00000020   Code   RO          260    i.__0printf$6       printf6.o(mc_t.l)
+    0x00000c50   0x00000002   Code   RO          169    i.__ARM_common_call_via_r2  printf1.o(mc_t.l)
+    0x00000c52   0x00000002   Code   RO          387    i.__ARM_common_call_via_r3  init.o(mc_t.l)
+    0x00000c54   0x00000002   Code   RO          123    i.__ARM_common_call_via_r6  printfb.o(mc_t.l)
+    0x00000c56   0x00000002   PAD
+    0x00000c58   0x00000018   Code   RO          401    i.__scatterload_copy  handlers.o(mc_t.l)
+    0x00000c70   0x00000004   Code   RO          402    i.__scatterload_null  handlers.o(mc_t.l)
+    0x00000c74   0x00000018   Code   RO          403    i.__scatterload_zeroinit  handlers.o(mc_t.l)
+    0x00000c8c   0x0000031c   Code   RO          267    i._printf_core      printf6.o(mc_t.l)
+    0x00000fa8   0x00000026   Code   RO          268    i._printf_post_padding  printf6.o(mc_t.l)
+    0x00000fce   0x00000030   Code   RO          269    i._printf_pre_padding  printf6.o(mc_t.l)
+    0x00000ffe   0x00000002   PAD
+    0x00001000   0x00000020   Data   RO          399    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x40000000, Size: 0x00000528, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Base: 0x40000000, Size: 0x00000540, Max: 0x00008000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x40000000   0x00000004   Data   RW            9    .data               retarget.o
-    0x40000004   0x00000010   Data   RW           47    .data               wawa.o
-    0x40000014   0x0000000c   Data   RW           82    .data               irq.o
-    0x40000020   0x00000508   Zero   RW            1    STACK               lpc2300.o
+    0x40000004   0x00000014   Data   RW           47    .data               wawa.o
+    0x40000018   0x0000001c   Data   RW           82    .data               irq.o
+    0x40000034   0x00000004   PAD
+    0x40000038   0x00000508   Zero   RW            1    STACK               lpc2300.o
 
 
 ==============================================================================
@@ -587,16 +594,16 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       268         32          0         12          0       1019   irq.o
+       560         52          0         28          0       1378   irq.o
        356         48          0          0       1288        300   lpc2300.o
         72          0          0          4          0       3980   retarget.o
-       456         16          0          0          0       1246   serial.o
-      1236         84          0         16          0       1983   wawa.o
+       472         16          0          0          0       1254   serial.o
+      1480         88          0         20          0       2105   wawa.o
 
     ----------------------------------------------------------------------
-      2396        180         32         32       1288       8528   Object Totals
+      2948        204         32         52       1292       9017   Object Totals
          8          0         32          0          0          0   (incl. Generated)
-         0          0          0          0          0          0   (incl. Padding)
+         0          0          0          0          4          3   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -634,15 +641,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3544        210         32         32       1288       8748   Grand Totals
-      3544        210         32         32       1288       8748   ELF Image Totals
-      3544        210         32         32          0          0   ROM Totals
+      4096        234         32         52       1292       9240   Grand Totals
+      4096        234         32         52       1292       9240   ELF Image Totals
+      4096        234         32         52          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 3576 (   3.49kB)
-    Total RW  Size (RW Data + ZI Data)              1320 (   1.29kB)
-    Total ROM Size (Code + RO Data + RW Data)       3608 (   3.52kB)
+    Total RO  Size (Code + RO Data)                 4128 (   4.03kB)
+    Total RW  Size (RW Data + ZI Data)              1344 (   1.31kB)
+    Total ROM Size (Code + RO Data + RW Data)       4180 (   4.08kB)
 
 ==============================================================================
 

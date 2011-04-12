@@ -323,6 +323,11 @@
           <WinNumber>1</WinNumber>
           <ItemText>AD_last</ItemText>
         </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>I2SRX</ItemText>
+        </Ww>
       </WatchWindow1>
       <MemoryWindow1>
         <Mm>
@@ -408,10 +413,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>43</ColumnNumber>
+      <ColumnNumber>28</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>27</TopLine>
-      <CurrentLine>45</CurrentLine>
+      <TopLine>32</TopLine>
+      <CurrentLine>43</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Serial.c</PathWithFileName>
       <FilenameWithoutPath>Serial.c</FilenameWithoutPath>
@@ -429,10 +434,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>25</ColumnNumber>
+      <ColumnNumber>4</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>24</TopLine>
-      <CurrentLine>24</CurrentLine>
+      <TopLine>252</TopLine>
+      <CurrentLine>265</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\WaWA.c</PathWithFileName>
       <FilenameWithoutPath>WaWA.c</FilenameWithoutPath>
@@ -443,10 +448,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>26</ColumnNumber>
+      <ColumnNumber>44</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>43</TopLine>
-      <CurrentLine>63</CurrentLine>
+      <TopLine>247</TopLine>
+      <CurrentLine>247</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\LCD_4bit.c</PathWithFileName>
       <FilenameWithoutPath>LCD_4bit.c</FilenameWithoutPath>
@@ -457,10 +462,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>32</ColumnNumber>
+      <ColumnNumber>3</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>36</TopLine>
-      <CurrentLine>37</CurrentLine>
+      <TopLine>97</TopLine>
+      <CurrentLine>113</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\IRQ.c</PathWithFileName>
       <FilenameWithoutPath>IRQ.c</FilenameWithoutPath>
@@ -508,9 +513,9 @@
   </Group>
 
   <AlienFiles>
-    <PathWithFilename>C:\Keil\ARM\INC\Philips\LPC23xx.H</PathWithFilename>
-    <TopLine>155</TopLine>
-    <CurrentLine>168</CurrentLine>
+    <PathWithFilename>C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\LCD.h</PathWithFilename>
+    <TopLine>1</TopLine>
+    <CurrentLine>14</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -534,9 +539,9 @@
   </AlienFiles>
 
   <AlienFiles>
-    <PathWithFilename>C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\LCD.h</PathWithFilename>
-    <TopLine>1</TopLine>
-    <CurrentLine>12</CurrentLine>
+    <PathWithFilename>C:\Keil\ARM\INC\Philips\LPC23xx.H</PathWithFilename>
+    <TopLine>122</TopLine>
+    <CurrentLine>143</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -1900,43 +1905,49 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>2</ActiveTab>
+      <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
           <Name>C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\WaWA.c</Name>
-          <ColumnNumber>25</ColumnNumber>
-          <TopLine>24</TopLine>
-          <CurrentLine>24</CurrentLine>
+          <ColumnNumber>4</ColumnNumber>
+          <TopLine>252</TopLine>
+          <CurrentLine>265</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\IRQ.c</Name>
-          <ColumnNumber>32</ColumnNumber>
-          <TopLine>36</TopLine>
-          <CurrentLine>37</CurrentLine>
+          <ColumnNumber>3</ColumnNumber>
+          <TopLine>97</TopLine>
+          <CurrentLine>113</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\Serial.c</Name>
-          <ColumnNumber>43</ColumnNumber>
-          <TopLine>27</TopLine>
-          <CurrentLine>45</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\LCD.h</Name>
-          <ColumnNumber>16</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>12</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\LCD_4bit.c</Name>
-          <ColumnNumber>26</ColumnNumber>
-          <TopLine>43</TopLine>
-          <CurrentLine>63</CurrentLine>
+          <ColumnNumber>28</ColumnNumber>
+          <TopLine>32</TopLine>
+          <CurrentLine>43</CurrentLine>
         </Doc>
         <Doc>
           <Name>C:\Keil\ARM\INC\Philips\LPC23xx.H</Name>
-          <ColumnNumber>24</ColumnNumber>
-          <TopLine>155</TopLine>
-          <CurrentLine>168</CurrentLine>
+          <ColumnNumber>37</ColumnNumber>
+          <TopLine>122</TopLine>
+          <CurrentLine>143</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>C:\Users\drew\Dropbox\We-are-Wireless-Audio\WaWA\LCD.h</Name>
+          <ColumnNumber>50</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>14</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\LCD_4bit.c</Name>
+          <ColumnNumber>44</ColumnNumber>
+          <TopLine>247</TopLine>
+          <CurrentLine>247</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\LPC2300.s</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>332</TopLine>
+          <CurrentLine>336</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

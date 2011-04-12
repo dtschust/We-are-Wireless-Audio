@@ -10,6 +10,7 @@
 extern __irq void T0_IRQHandler  (void);
 extern __irq void T0_IRQHandler2  (void);
 extern __irq void ADC_IRQHandler (void);
+extern __irq void I2S_IRQHandler (void);
 
 /* Import external functions from Serial.c file                               */
 extern       void init_serial    (void);
@@ -22,12 +23,15 @@ extern       int getkey0    (void);
 extern short AD_last;
 extern unsigned char clock_1s;
 extern int currentButton;
+extern int voiceCode;
+
+extern int I2SRX;
 
 int in;
 char out;
 int volume;
 
-
+int lastonoff;
 /* Function that initializes LEDs                                             */
 void LED_Init(void) {
   PINSEL10 = 0;                         /* Disable ETM interface, enable LEDs */
@@ -54,6 +58,10 @@ void LED_Out(unsigned int value) {
 /* Function that initializes the display and puts an initial value on the screen*/
 void display_init(void)
 {
+  // Let's ghetto make pin 75 2[11] the clock for pcm3010!
+  PINSEL4 &= 0xFF9FFFFF;
+  FIO2DIR = 1 << 11 ; //pin configured as output
+  FIO2CLR = 1 << 11;
   // Let's make the LCD nReset pin P3[1] AKA pin 140!
   PINSEL6 &= 0xFFFFFFF3;
   FIO3DIR = 1 << 1 ; //pin configured as output
@@ -110,6 +118,7 @@ void preprint(void)
 void checkVolumeChange(void)
 {
   static int lastButton;
+  //Buttons
   if ((lastButton & 0x1C)!= (currentButton & 0x1C))	 //If any of the 3 inputs changed
 
   {	
@@ -131,6 +140,27 @@ void checkVolumeChange(void)
 	  //This occurs on press of button instead of release.  Do nothing here
     }	  
   }
+  //Voice
+  if (clock_1s == 1)
+  {				  
+    clock_1s = 0;
+    if (voiceCode == 1)
+    {
+     volume++;
+    }
+	else if (voiceCode == 2)
+	{
+	 volume--;
+	}
+	else if (voiceCode == 3)
+	{
+	 volume=0;
+	}
+	else
+	{
+	 //volume+=2;
+	}
+  }
   if (volume <0)
   {
     volume=0;
@@ -144,25 +174,26 @@ void checkVolumeChange(void)
 }
 
 int main (void) {
+  int count=0;
   int lastVolume;
   LED_Init();                           /* LED Initialization                 */
   volume=5;
    /* Enable and setup timer interrupt, start timer                            */
   //T0MR0         = 11999;                       /* 1msec = 12000-1 at 12.0 MHz */
-  T0MR0         = 299;                       /* 0.25msec = 300-1 at 12.0 MHz */
+  T0MR0         = 299;                       /* 0.025msec = 300-1 at 12.0 MHz */
   T0MCR         = 3;                           /* Interrupt and Reset on MR0  */
   T0TCR         = 0;                           /* Timer0 Enable             */
   VICVectAddr4  = (unsigned long)T0_IRQHandler;/* Set Interrupt Vector        */
   VICVectCntl4  = 15;                          /* use it for Timer0 Interrupt */
-  VICIntEnable  = (1  << 4);                   /* Enable Timer0 Interrupt     */
+  VICIntEnable  |= (1  << 4);                   /* Enable Timer0 Interrupt     */
 
   /* Enable and setup timer interrupt (useful for communicating with display)*/
   T1MR0         = 11999;                       /* 1msec = 12000-1 at 12.0 MHz */
   T1MCR         = 3;                           /* Interrupt and Reset on MR0  */
   T1TCR         = 1;                           /* Timer1 Enable            */
   VICVectAddr5  = (unsigned long)T0_IRQHandler2;/* Set Interrupt Vector        */
-  VICVectCntl5  = 16;                          /* use it for Timer0 Interrupt */
-  VICIntEnable  = (1  << 5);                   /* Enable Timer0 Interrupt     */ 
+  VICVectCntl5  = 16;                          /* use it for Timer1 Interrupt */
+  VICIntEnable  |= (1  << 5);                   /* Enable Timer0 Interrupt     */ 
 
   			
   /* Power enable, Setup pin, enable and setup AD converter interrupt         */
@@ -172,7 +203,7 @@ int main (void) {
   AD0CR         = 0x00200301;                  /* Power up, PCLK/4, sel AD0.0 */
   VICVectAddr18 = (unsigned long)ADC_IRQHandler;/* Set Interrupt Vector       */
   VICVectCntl18 = 14;                          /* use it for ADC Interrupt    */
-  VICIntEnable  = (1  << 18);                  /* Enable ADC Interrupt        */
+  VICIntEnable  |= (1  << 18);                  /* Enable ADC Interrupt        */
 
   init_serial();                               /* Init UART                   */
  
@@ -181,6 +212,42 @@ int main (void) {
 
   /*Initialize the display*/
   display_init();
+
+
+  /*Let's try to turn on I2S :-/ */
+  //PCONP |= (1 << 27);  /*Enable power to I2S partay */
+
+  /*Enable pins 0[4] - 0[9]: I don't trust these pins*/
+  //PINSEL0 &= ~0x000FFF00;
+  //PINSEL0 |= 0x00055500;  
+
+  //I2S_RXRATE = 0x6;
+  //I2S_TXRATE = 0x6;
+
+  //I2S_DAO = 0x7C3;
+  //I2S_DAI = 0x7C3;
+
+  //I2S_IRQ = (1) | (1<<8) ; /*Enable interrupt for receive*/
+
+  //VICVectAddr31 = (unsigned long)I2S_IRQHandler;/* Set Interrupt Vector       */
+  //VICVectCntl6 = 14;                          /* use it for ADC Interrupt    */
+  //VICIntEnable  |= (unsigned int)(0x1  << 31);                  /* Enable I2S Interrupt        */
+
+
+
+
+
+  /* Let's initialize the voice recognition pins: p1.19-22	 */
+  // In a perfect world those would be the pins.  But yeah not so much.
+  // p2[5-8] = 97,96,95,93
+  PINSEL4 &=  0xFFFC03FF;
+  //FIO2DIR not necessary
+  
+   PINSEL4 &= 0xFF9FFFFF;
+  FIO2DIR = 1 << 11 ; //pin configured as output
+  FIO2CLR = 1 << 11;
+
+
   T0TCR         = 1;                           /* Timer0 Enable (Start A-D conversions!)              */
   while (1) {                           /* Loop forever                       */
    /* Audio Code*/
@@ -194,11 +261,16 @@ int main (void) {
 	if (lastVolume != volume)
 	{
        preprint();
+	   //printf("Volume: %2d %x",volume,(voiceCode>>5)& 0xF);
 	   printf("Volume: %2d",volume);
+	  // printf("Volume: %2d %2d",volume,voiceCode);
+	   //printf("Blah: %x, %d",I2SRX,count++);
 	   sendchar3(0x00);
 	}
 	lastVolume=volume;	  
     /*End Volume control*/
+
+
 
 	/*Deprecated Code! Now goes in IRQ*/
 	//in = getkey0();

@@ -40,6 +40,7 @@ void int_serial0 (void) __irq {		/*UART0 receive interrupt*/
 
 void init_serial (void)  {               /* Initialize Serial Interface       */
     PCONP        |= (1 << 25);                   /* Enable power to UART3   */
+	PCONP        &= 0xFFFFFFEF;          //Disable UART1
 
 
     PINSEL0 |= 0x00000050;               /* Enable TxD0 and RxD0              */
