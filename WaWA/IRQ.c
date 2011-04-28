@@ -1,12 +1,12 @@
-/******************************************************************************/
-/* IRQ.C: IRQ Handler                                                         */
-/******************************************************************************/
-/* This file is part of the uVision/ARM development tools.                    */
-/* Copyright (c) 2005-2006 Keil Software. All rights reserved.                */
-/* This software may only be used under the terms of a valid, current,        */
-/* end user licence from KEIL for a compatible version of KEIL software       */
-/* development tools. Nothing else gives you the right to use this software.  */
-/******************************************************************************/ 
+// Title: IRQ
+// Version: 1.0
+// Filename: IRQ.c
+// Author: Drew Schuster  (loosely based on MCB2300 development tools provided by Keil)
+// Purpose/Function of program: Handles all interrupt routines needed by WaWA
+// How Program is Run on Target System: Loaded using JTAG interface, called via interrupt after
+     // Initialization by WaWA.c
+// Date Started: March 14th
+// Update History:  See Github repository at https://github.com/dr3wster/We-are-Wireless-Audio
 
 #define BASE
 //#define DEVBOARD
@@ -20,82 +20,20 @@ int I2SRX=4;
 unsigned char clock_1s;                 /* Flag activated each second         */
 int currentButton;
 int voiceCode;
-/* Import function for turning LEDs on or off                                 */
-//extern void LED_On (unsigned int num);
-//extern void LED_Off(unsigned int num);
 
 
-__irq void I2S_IRQHandler (void) 
-{
-  //unsigned long RxCount = 0;
-  //int I2SRX;
-  int temp;
-  //if (1==0)
-  if ( I2S_STATE & 0x01 )
-  {
-	/*RxCount = (I2S_STATE >> 8) & 0xFF;
-	if ( (RxCount != 0) )//&& !I2SRXDone )
-	{
-	  while ( RxCount > 0 )
-	  {
-		if ( I2SReadLength == BUFSIZE )
-		{
-		  // Stop RX channel 
-		  I2S_DAI |= ((0x01 << 3) | (0x01 << 4));
-		  I2S_IRQ &= ~(0x01 << 0);	// Disable RX 	
-		  I2SRXDone = 1;
-		  break;
-		}
-		else
-		{
-		  I2SRXBuffer[I2SReadLength++] = I2S_RX_FIFO;
-		}
-		RxCount--;
-	  }
-	} */
-	temp = I2S_RX_FIFO;
-	if (temp != 0)
-	{
-	I2SRX = I2S_RX_FIFO;
-	I2S_TX_FIFO = I2SRX;
-	}
-  }
-  else
-  {
-    I2SRX= I2S_RX_FIFO;
-  }
-  VICVectAddr = 0;		/* Acknowledge Interrupt */
-}
 
+
+// Function Name: TO_IRQHandler()
+// Author: Drew Schuster
+// Called by: timer 0 interrupt
+// Purpose: Starts A/D Conversion
+// Calling convention:  Not called directly, called via interrupt
+// Conditions at exit: A/D Conversion started, interrupt acknowledged
+// Date Started: March 14th
+// Update History: 	See Github repository at https://github.com/dr3wster/We-are-Wireless-Audio
 /* Timer0 IRQ: Executed periodically                                          */
 __irq void T0_IRQHandler (void) {
-    static int clk_cntr=0;
-	static int yesno=0;
-
-#ifdef BASE
-  clk_cntr++;
-  if (clk_cntr>=52)
-  {
-    if (yesno == 1)
-	{
-    FIO2SET = 1 <<11; //Pin goes high
-	yesno=0;
-	clk_cntr=0;
-	}
-	else
-	{
-	FIO2CLR = 1<<11 ; // Pin goes low.
-	clk_cntr=0;
-	yesno=1;
-	}
-  }
-#endif
-
-
-
-
-
-
 
   AD0CR |= 0x01000000;                  /* Start A/D Conversion               */
  
@@ -103,9 +41,18 @@ __irq void T0_IRQHandler (void) {
   VICVectAddr = 0;                      /* Acknowledge Interrupt              */
 }
 
+
+// Function Name: TO_IRQHandler2()
+// Author: Drew Schuster
+// Called by: timer 1 interrupt
+// Purpose: Handles user input, seconds flag
+// Calling convention:  Not called directly, called via interrupt
+// Conditions at exit: User input updated, seconds flag updated
+// Date Started: March 14th
+// Update History: 	See Github repository at https://github.com/dr3wster/We-are-Wireless-Audio
 __irq void T0_IRQHandler2 (void) {	 /* Timer interrupt to interface with display*/
   static int clk_cntr;
-  	int something;//,one,two,four,eight;
+  	int buttons;
   
   if (clk_cntr%100==0)	 /*Update push buttons 10 times a second*/
   {
@@ -120,11 +67,11 @@ __irq void T0_IRQHandler2 (void) {	 /* Timer interrupt to interface with display
   if (clk_cntr%1000==0)
   {
 #ifdef DEVBOARD
-   something = (FIO2PIN>>5) & 0x0F;
+   buttons = (FIO2PIN>>5) & 0x0F;
 #else
-   something = (FIO1PIN>>20)& 0x1F;
+   buttons = (FIO1PIN>>20)& 0x1F;
 #endif
-   voiceCode = something;
+   voiceCode = buttons;
   }
 
   clk_cntr++;
@@ -137,6 +84,15 @@ __irq void T0_IRQHandler2 (void) {	 /* Timer interrupt to interface with display
   VICVectAddr = 0;                      /* Acknowledge Interrupt              */
 }
 
+
+// Function Name: ADC_IRQHandler()
+// Author: Drew Schuster
+// Called by: ADC completion interrupt interrupt
+// Purpose: Reads A/D Conversion result, stores in variable read by main
+// Calling convention:  Not called directly, called via interrupt
+// Conditions at exit: A/D Conversion result stored, interrupt acknowledged
+// Date Started: March 14th
+// Update History: 	See Github repository at https://github.com/dr3wster/We-are-Wireless-Audio
 /* A/D IRQ: Executed when A/D Conversion is done                              */
 __irq void ADC_IRQHandler(void) {
 

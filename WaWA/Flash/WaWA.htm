@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Flash\WaWA.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Flash\WaWA.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, RVCT4.0 [Build 728]: Last Updated: Tue Apr 26 12:46:20 2011
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, RVCT4.0 [Build 728]: Last Updated: Thu Apr 28 11:21:05 2011
 <BR><P>
 <H3>Maximum Stack Usage =         56 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -12,294 +12,292 @@ T0_IRQHandler2 &rArr; __aeabi_idivmod &rArr; __aeabi_uidivmod
 <H3>
 Functions with no stack information
 </H3><UL>
- <LI><a href="#[218d658]">Reset_Handler</a>
- <LI><a href="#[218d8b0]">Undef_Handler</a>
- <LI><a href="#[218d874]">SWI_Handler</a>
- <LI><a href="#[218d838]">PAbt_Handler</a>
- <LI><a href="#[218d7fc]">DAbt_Handler</a>
- <LI><a href="#[218d7c0]">IRQ_Handler</a>
- <LI><a href="#[218d784]">FIQ_Handler</a>
+ <LI><a href="#[88d658]">Reset_Handler</a>
+ <LI><a href="#[88d8b0]">Undef_Handler</a>
+ <LI><a href="#[88d874]">SWI_Handler</a>
+ <LI><a href="#[88d838]">PAbt_Handler</a>
+ <LI><a href="#[88d7fc]">DAbt_Handler</a>
+ <LI><a href="#[88d7c0]">IRQ_Handler</a>
+ <LI><a href="#[88d784]">FIQ_Handler</a>
 </UL>
 </UL>
 <P>
 <H3>
 Mutually Recursive functions
-</H3> <LI><a href="#[218d8b0]">Undef_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[218d8b0]">Undef_Handler</a><BR>
- <LI><a href="#[218d874]">SWI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[218d874]">SWI_Handler</a><BR>
- <LI><a href="#[218d838]">PAbt_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[218d838]">PAbt_Handler</a><BR>
- <LI><a href="#[218d7fc]">DAbt_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[218d7fc]">DAbt_Handler</a><BR>
- <LI><a href="#[218d7c0]">IRQ_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[218d7c0]">IRQ_Handler</a><BR>
- <LI><a href="#[218d784]">FIQ_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[218d784]">FIQ_Handler</a><BR>
+</H3> <LI><a href="#[88d8b0]">Undef_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[88d8b0]">Undef_Handler</a><BR>
+ <LI><a href="#[88d874]">SWI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[88d874]">SWI_Handler</a><BR>
+ <LI><a href="#[88d838]">PAbt_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[88d838]">PAbt_Handler</a><BR>
+ <LI><a href="#[88d7fc]">DAbt_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[88d7fc]">DAbt_Handler</a><BR>
+ <LI><a href="#[88d7c0]">IRQ_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[88d7c0]">IRQ_Handler</a><BR>
+ <LI><a href="#[88d784]">FIQ_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[88d784]">FIQ_Handler</a><BR>
 </UL>
 <P>
 <H3>
 Function Pointers
 </H3><UL>
- <LI><a href="#[218d658]">Reset_Handler</a>
- <LI><a href="#[218d8b0]">Undef_Handler</a>
- <LI><a href="#[218d874]">SWI_Handler</a>
- <LI><a href="#[218d838]">PAbt_Handler</a>
- <LI><a href="#[218d7fc]">DAbt_Handler</a>
- <LI><a href="#[218d7c0]">IRQ_Handler</a>
- <LI><a href="#[218d784]">FIQ_Handler</a>
- <LI><a href="#[218afe8]">__main</a>
- <LI><a href="#[218c050]">main</a>
- <LI><a href="#[218bf9c]">T0_IRQHandler</a>
- <LI><a href="#[218bf60]">T0_IRQHandler2</a>
- <LI><a href="#[218c014]">ADC_IRQHandler</a>
- <LI><a href="#[218cf14]">fputc</a>
+ <LI><a href="#[88d658]">Reset_Handler</a>
+ <LI><a href="#[88d8b0]">Undef_Handler</a>
+ <LI><a href="#[88d874]">SWI_Handler</a>
+ <LI><a href="#[88d838]">PAbt_Handler</a>
+ <LI><a href="#[88d7fc]">DAbt_Handler</a>
+ <LI><a href="#[88d7c0]">IRQ_Handler</a>
+ <LI><a href="#[88d784]">FIQ_Handler</a>
+ <LI><a href="#[88b0d8]">__main</a>
+ <LI><a href="#[88c08c]">main</a>
+ <LI><a href="#[88bfd8]">T0_IRQHandler</a>
+ <LI><a href="#[88bf9c]">T0_IRQHandler2</a>
+ <LI><a href="#[88c050]">ADC_IRQHandler</a>
+ <LI><a href="#[88cf14]">fputc</a>
 </UL>
 <P>
 <H3>
 Global Symbols
 </H3>
-<P><STRONG><a name="[218d658]"></a>Reset_Handler</STRONG> (ARM, 0 bytes, Stack size unknown bytes, lpc2300.o(RESET))
+<P><STRONG><a name="[88d658]"></a>Reset_Handler</STRONG> (ARM, 0 bytes, Stack size unknown bytes, lpc2300.o(RESET))
 <BR>[Address Reference Count : 1]<UL><LI> lpc2300.o(RESET)
 </UL>
-<P><STRONG><a name="[218afe8]"></a>__main</STRONG> (ARM, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
+<P><STRONG><a name="[88b0d8]"></a>__main</STRONG> (ARM, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 
-<P><STRONG><a name="[21810c4]"></a>_main_stk</STRONG> (ARM, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[8811b4]"></a>_main_stk</STRONG> (ARM, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
-<P><STRONG><a name="[2180fd4]"></a>_main_scatterload</STRONG> (ARM, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
-<BR><BR>[Calls]<UL><LI><a href="#[218050c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload (via Veneer)
+<P><STRONG><a name="[8810c4]"></a>_main_scatterload</STRONG> (ARM, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<BR><BR>[Calls]<UL><LI><a href="#[8805fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload (via Veneer)
 </UL>
 
-<P><STRONG><a name="[2180f98]"></a>__main_after_scatterload</STRONG> (ARM, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
-<BR><BR>[Called By]<UL><LI><a href="#[218050c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload (via Veneer)
+<P><STRONG><a name="[881088]"></a>__main_after_scatterload</STRONG> (ARM, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<BR><BR>[Called By]<UL><LI><a href="#[8805fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload (via Veneer)
 </UL>
 
-<P><STRONG><a name="[2180ea8]"></a>_main_init</STRONG> (ARM, 0 bytes, Stack size unknown bytes, entry7.o(.ARM.Collect$$$$00000007))
+<P><STRONG><a name="[880f98]"></a>_main_init</STRONG> (ARM, 0 bytes, Stack size unknown bytes, entry7.o(.ARM.Collect$$$$00000007))
 
-<P><STRONG><a name="[218cf14]"></a>fputc</STRONG> (ARM, 28 bytes, Stack size 16 bytes, retarget.o(.text))
+<P><STRONG><a name="[88cf14]"></a>fputc</STRONG> (ARM, 28 bytes, Stack size 16 bytes, retarget.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = fputc
 </UL>
-<BR>[Calls]<UL><LI><a href="#[218cde8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar3
+<BR>[Calls]<UL><LI><a href="#[88cde8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar3
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> printf6.o(i.__0printf$6)
 </UL>
-<P><STRONG><a name="[218ced8]"></a>ferror</STRONG> (ARM, 12 bytes, Stack size 0 bytes, retarget.o(.text), UNUSED)
+<P><STRONG><a name="[88ced8]"></a>ferror</STRONG> (ARM, 12 bytes, Stack size 0 bytes, retarget.o(.text), UNUSED)
 
-<P><STRONG><a name="[218ce9c]"></a>_ttywrch</STRONG> (ARM, 24 bytes, Stack size 8 bytes, retarget.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[218cde8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar3
+<P><STRONG><a name="[88ce9c]"></a>_ttywrch</STRONG> (ARM, 24 bytes, Stack size 8 bytes, retarget.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[88cde8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar3
 </UL>
 
-<P><STRONG><a name="[218ce60]"></a>_sys_exit</STRONG> (ARM, 8 bytes, Stack size 0 bytes, retarget.o(.text), UNUSED)
+<P><STRONG><a name="[88ce60]"></a>_sys_exit</STRONG> (ARM, 8 bytes, Stack size 0 bytes, retarget.o(.text), UNUSED)
 
-<P><STRONG><a name="[218c974]"></a>SPISend</STRONG> (ARM, 96 bytes, Stack size 4 bytes, serial.o(.text))
+<P><STRONG><a name="[88c974]"></a>SPISend</STRONG> (ARM, 96 bytes, Stack size 4 bytes, serial.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = SPISend
 </UL>
-<BR>[Called By]<UL><LI><a href="#[218c050]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[88c08c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[218c938]"></a>getkey3</STRONG> (ARM, 32 bytes, Stack size 0 bytes, serial.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[218c104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;display_init
+<P><STRONG><a name="[88c938]"></a>getkey3</STRONG> (ARM, 32 bytes, Stack size 0 bytes, serial.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[88c140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;display_init
 </UL>
 
-<P><STRONG><a name="[218c8fc]"></a>getkey0</STRONG> (ARM, 32 bytes, Stack size 0 bytes, serial.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[218c8c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_serial0
+<P><STRONG><a name="[88c8fc]"></a>getkey0</STRONG> (ARM, 32 bytes, Stack size 0 bytes, serial.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[88c8c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;int_serial0
 </UL>
 
-<P><STRONG><a name="[218c8c0]"></a>int_serial0</STRONG> (ARM, 48 bytes, Stack size 20 bytes, serial.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[218c8fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getkey0
+<P><STRONG><a name="[88c8c0]"></a>int_serial0</STRONG> (ARM, 48 bytes, Stack size 20 bytes, serial.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[88c8fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getkey0
 </UL>
 
-<P><STRONG><a name="[218c884]"></a>init_serial</STRONG> (ARM, 312 bytes, Stack size 0 bytes, serial.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[218c050]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[88c884]"></a>init_serial</STRONG> (ARM, 312 bytes, Stack size 0 bytes, serial.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[88c08c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[218cde8]"></a>sendchar3</STRONG> (ARM, 32 bytes, Stack size 0 bytes, serial.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[218c050]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[218c0c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;preprint
-<LI><a href="#[218c104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;display_init
-<LI><a href="#[218ce9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ttywrch
-<LI><a href="#[218cf14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
+<P><STRONG><a name="[88cde8]"></a>sendchar3</STRONG> (ARM, 32 bytes, Stack size 0 bytes, serial.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[88c08c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[88c104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;preprint
+<LI><a href="#[88c140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;display_init
+<LI><a href="#[88ce9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ttywrch
+<LI><a href="#[88cf14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
 </UL>
 
-<P><STRONG><a name="[218c848]"></a>sendchar0</STRONG> (ARM, 32 bytes, Stack size 0 bytes, serial.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[218c050]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[88c848]"></a>sendchar0</STRONG> (ARM, 32 bytes, Stack size 0 bytes, serial.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[88c08c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[218c104]"></a>display_init</STRONG> (ARM, 284 bytes, Stack size 8 bytes, wawa.o(.text))
+<P><STRONG><a name="[88c140]"></a>display_init</STRONG> (ARM, 284 bytes, Stack size 8 bytes, wawa.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = display_init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[218c938]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getkey3
-<LI><a href="#[218cde8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar3
+<BR>[Calls]<UL><LI><a href="#[88c938]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getkey3
+<LI><a href="#[88cde8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar3
 </UL>
-<BR>[Called By]<UL><LI><a href="#[218c050]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[88c08c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[218c0c8]"></a>preprint</STRONG> (ARM, 76 bytes, Stack size 8 bytes, wawa.o(.text))
+<P><STRONG><a name="[88c104]"></a>preprint</STRONG> (ARM, 76 bytes, Stack size 8 bytes, wawa.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = preprint
 </UL>
-<BR>[Calls]<UL><LI><a href="#[218cde8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar3
+<BR>[Calls]<UL><LI><a href="#[88cde8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar3
 </UL>
-<BR>[Called By]<UL><LI><a href="#[218c050]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[218c08c]"></a>checkVolumeChange</STRONG> (ARM, 452 bytes, Stack size 0 bytes, wawa.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[218c050]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[88c08c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[218c050]"></a>main</STRONG> (ARM, 1880 bytes, Stack size 8 bytes, wawa.o(.text))
+<P><STRONG><a name="[88c0c8]"></a>checkVolumeChange</STRONG> (ARM, 452 bytes, Stack size 0 bytes, wawa.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[88c08c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[88c08c]"></a>main</STRONG> (ARM, 1424 bytes, Stack size 8 bytes, wawa.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = main &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2184f94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf (via Veneer)
-<LI><a href="#[218c08c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkVolumeChange
-<LI><a href="#[218c0c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;preprint
-<LI><a href="#[218c104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;display_init
-<LI><a href="#[218c848]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar0
-<LI><a href="#[218c884]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_serial
-<LI><a href="#[218c974]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPISend
-<LI><a href="#[218cde8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar3
+<BR>[Calls]<UL><LI><a href="#[885084]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf (via Veneer)
+<LI><a href="#[88c0c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkVolumeChange
+<LI><a href="#[88c104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;preprint
+<LI><a href="#[88c140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;display_init
+<LI><a href="#[88c848]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar0
+<LI><a href="#[88c884]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_serial
+<LI><a href="#[88c974]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPISend
+<LI><a href="#[88cde8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendchar3
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry7.o(.ARM.Collect$$$$00000007)
 </UL>
-<P><STRONG><a name="[218b150]"></a>I2S_IRQHandler</STRONG> (ARM, 100 bytes, Stack size 12 bytes, irq.o(.text), UNUSED)
-
-<P><STRONG><a name="[218bf9c]"></a>T0_IRQHandler</STRONG> (ARM, 176 bytes, Stack size 8 bytes, irq.o(.text))
+<P><STRONG><a name="[88bfd8]"></a>T0_IRQHandler</STRONG> (ARM, 52 bytes, Stack size 8 bytes, irq.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = T0_IRQHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> wawa.o(.text)
 </UL>
-<P><STRONG><a name="[218bf60]"></a>T0_IRQHandler2</STRONG> (ARM, 196 bytes, Stack size 32 bytes, irq.o(.text))
+<P><STRONG><a name="[88bf9c]"></a>T0_IRQHandler2</STRONG> (ARM, 196 bytes, Stack size 32 bytes, irq.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = T0_IRQHandler2 &rArr; __aeabi_idivmod &rArr; __aeabi_uidivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[218acdc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_idivmod (via Veneer)
+<BR>[Calls]<UL><LI><a href="#[88adcc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_idivmod (via Veneer)
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> wawa.o(.text)
 </UL>
-<P><STRONG><a name="[218c014]"></a>ADC_IRQHandler</STRONG> (ARM, 44 bytes, Stack size 8 bytes, irq.o(.text))
+<P><STRONG><a name="[88c050]"></a>ADC_IRQHandler</STRONG> (ARM, 44 bytes, Stack size 8 bytes, irq.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = ADC_IRQHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> wawa.o(.text)
 </UL>
-<P><STRONG><a name="[218ad18]"></a>__aeabi_idiv</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, idiv.o(.text), UNUSED)
+<P><STRONG><a name="[88ae08]"></a>__aeabi_idiv</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, idiv.o(.text), UNUSED)
 
-<P><STRONG><a name="[218acdc]"></a>__aeabi_idivmod</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, idiv.o(.text))
+<P><STRONG><a name="[88adcc]"></a>__aeabi_idivmod</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, idiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __aeabi_idivmod &rArr; __aeabi_uidivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2180d40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<BR>[Calls]<UL><LI><a href="#[880e30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
 </UL>
-<BR>[Called By]<UL><LI><a href="#[218bf60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T0_IRQHandler2 (via Veneer)
+<BR>[Called By]<UL><LI><a href="#[88bf9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T0_IRQHandler2 (via Veneer)
 </UL>
 
-<P><STRONG><a name="[2180d7c]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, uidiv.o(.text), UNUSED)
+<P><STRONG><a name="[880e6c]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, uidiv.o(.text), UNUSED)
 
-<P><STRONG><a name="[2180d40]"></a>__aeabi_uidivmod</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, uidiv.o(.text))
+<P><STRONG><a name="[880e30]"></a>__aeabi_uidivmod</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, uidiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_uidivmod
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21851ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
-<LI><a href="#[218acdc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_idivmod
+<BR>[Called By]<UL><LI><a href="#[8852dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<LI><a href="#[88adcc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_idivmod
 </UL>
 
-<P><STRONG><a name="[218050c]"></a>__scatterload</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, init.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[2180494]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r3
-<LI><a href="#[2180f98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload (via Veneer)
+<P><STRONG><a name="[8805fc]"></a>__scatterload</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, init.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[880584]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r3
+<LI><a href="#[881088]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload (via Veneer)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2180fd4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload (via Veneer)
-</UL>
-
-<P><STRONG><a name="[21804d0]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
-
-<P><STRONG><a name="[218500c]"></a>__0printf$6</STRONG> (Thumb, 24 bytes, Stack size 24 bytes, printf6.o(i.__0printf$6), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[21851ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<BR>[Called By]<UL><LI><a href="#[8810c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload (via Veneer)
 </UL>
 
-<P><STRONG><a name="[2184fd0]"></a>__1printf$6</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf6.o(i.__0printf$6), UNUSED)
+<P><STRONG><a name="[8805c0]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[2184f94]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf6.o(i.__0printf$6))
+<P><STRONG><a name="[8850fc]"></a>__0printf$6</STRONG> (Thumb, 24 bytes, Stack size 24 bytes, printf6.o(i.__0printf$6), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[8852dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+</UL>
+
+<P><STRONG><a name="[8850c0]"></a>__1printf$6</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf6.o(i.__0printf$6), UNUSED)
+
+<P><STRONG><a name="[885084]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf6.o(i.__0printf$6))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[218c050]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main (via Veneer)
+<BR>[Called By]<UL><LI><a href="#[88c08c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main (via Veneer)
 </UL>
 
-<P><STRONG><a name="[2188798]"></a>__ARM_common_call_via_r2</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, printf1.o(i.__ARM_common_call_via_r2), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[21851ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<P><STRONG><a name="[888888]"></a>__ARM_common_call_via_r2</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, printf1.o(i.__ARM_common_call_via_r2), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[8852dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[2180494]"></a>__ARM_common_call_via_r3</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, init.o(i.__ARM_common_call_via_r3))
-<BR><BR>[Called By]<UL><LI><a href="#[218050c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<P><STRONG><a name="[880584]"></a>__ARM_common_call_via_r3</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, init.o(i.__ARM_common_call_via_r3))
+<BR><BR>[Called By]<UL><LI><a href="#[8805fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[218a034]"></a>__ARM_common_call_via_r6</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, printfb.o(i.__ARM_common_call_via_r6), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[2185174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
-<LI><a href="#[21851b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
+<P><STRONG><a name="[88a124]"></a>__ARM_common_call_via_r6</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, printfb.o(i.__ARM_common_call_via_r6), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[885264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
+<LI><a href="#[8852a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
 </UL>
 
-<P><STRONG><a name="[217fbe8]"></a>__scatterload_copy</STRONG> (ARM, 24 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[217fbe8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
+<P><STRONG><a name="[87fcd8]"></a>__scatterload_copy</STRONG> (ARM, 24 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[87fcd8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[217fbe8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
+<BR>[Called By]<UL><LI><a href="#[87fcd8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
 </UL>
 
-<P><STRONG><a name="[217fbac]"></a>__scatterload_null</STRONG> (ARM, 4 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[87fc9c]"></a>__scatterload_null</STRONG> (ARM, 4 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[217fb70]"></a>__scatterload_zeroinit</STRONG> (ARM, 24 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[87fc60]"></a>__scatterload_zeroinit</STRONG> (ARM, 24 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 <P>
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[218d8b0]"></a>Undef_Handler</STRONG> (ARM, 4 bytes, Stack size unknown bytes, lpc2300.o(RESET))
-<BR><BR>[Calls]<UL><LI><a href="#[218d8b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Undef_Handler
+<P><STRONG><a name="[88d8b0]"></a>Undef_Handler</STRONG> (ARM, 4 bytes, Stack size unknown bytes, lpc2300.o(RESET))
+<BR><BR>[Calls]<UL><LI><a href="#[88d8b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Undef_Handler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[218d8b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Undef_Handler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> lpc2300.o(RESET)
-</UL>
-<P><STRONG><a name="[218d874]"></a>SWI_Handler</STRONG> (ARM, 4 bytes, Stack size unknown bytes, lpc2300.o(RESET))
-<BR><BR>[Calls]<UL><LI><a href="#[218d874]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI_Handler
-</UL>
-<BR>[Called By]<UL><LI><a href="#[218d874]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI_Handler
+<BR>[Called By]<UL><LI><a href="#[88d8b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Undef_Handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lpc2300.o(RESET)
 </UL>
-<P><STRONG><a name="[218d838]"></a>PAbt_Handler</STRONG> (ARM, 4 bytes, Stack size unknown bytes, lpc2300.o(RESET))
-<BR><BR>[Calls]<UL><LI><a href="#[218d838]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PAbt_Handler
+<P><STRONG><a name="[88d874]"></a>SWI_Handler</STRONG> (ARM, 4 bytes, Stack size unknown bytes, lpc2300.o(RESET))
+<BR><BR>[Calls]<UL><LI><a href="#[88d874]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI_Handler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[218d838]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PAbt_Handler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> lpc2300.o(RESET)
-</UL>
-<P><STRONG><a name="[218d7fc]"></a>DAbt_Handler</STRONG> (ARM, 4 bytes, Stack size unknown bytes, lpc2300.o(RESET))
-<BR><BR>[Calls]<UL><LI><a href="#[218d7fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAbt_Handler
-</UL>
-<BR>[Called By]<UL><LI><a href="#[218d7fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAbt_Handler
+<BR>[Called By]<UL><LI><a href="#[88d874]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI_Handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lpc2300.o(RESET)
 </UL>
-<P><STRONG><a name="[218d7c0]"></a>IRQ_Handler</STRONG> (ARM, 4 bytes, Stack size unknown bytes, lpc2300.o(RESET))
-<BR><BR>[Calls]<UL><LI><a href="#[218d7c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_Handler
+<P><STRONG><a name="[88d838]"></a>PAbt_Handler</STRONG> (ARM, 4 bytes, Stack size unknown bytes, lpc2300.o(RESET))
+<BR><BR>[Calls]<UL><LI><a href="#[88d838]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PAbt_Handler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[218d7c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_Handler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> lpc2300.o(RESET)
-</UL>
-<P><STRONG><a name="[218d784]"></a>FIQ_Handler</STRONG> (ARM, 4 bytes, Stack size unknown bytes, lpc2300.o(RESET))
-<BR><BR>[Calls]<UL><LI><a href="#[218d784]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FIQ_Handler
-</UL>
-<BR>[Called By]<UL><LI><a href="#[218d784]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FIQ_Handler
+<BR>[Called By]<UL><LI><a href="#[88d838]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PAbt_Handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lpc2300.o(RESET)
 </UL>
-<P><STRONG><a name="[21851ec]"></a>_printf_core</STRONG> (Thumb, 790 bytes, Stack size 96 bytes, printf6.o(i._printf_core), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[2180d40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
-<LI><a href="#[2185174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
-<LI><a href="#[21851b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
-<LI><a href="#[2188798]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r2
+<P><STRONG><a name="[88d7fc]"></a>DAbt_Handler</STRONG> (ARM, 4 bytes, Stack size unknown bytes, lpc2300.o(RESET))
+<BR><BR>[Calls]<UL><LI><a href="#[88d7fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAbt_Handler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[218500c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf$6
+<BR>[Called By]<UL><LI><a href="#[88d7fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAbt_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> lpc2300.o(RESET)
+</UL>
+<P><STRONG><a name="[88d7c0]"></a>IRQ_Handler</STRONG> (ARM, 4 bytes, Stack size unknown bytes, lpc2300.o(RESET))
+<BR><BR>[Calls]<UL><LI><a href="#[88d7c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[88d7c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> lpc2300.o(RESET)
+</UL>
+<P><STRONG><a name="[88d784]"></a>FIQ_Handler</STRONG> (ARM, 4 bytes, Stack size unknown bytes, lpc2300.o(RESET))
+<BR><BR>[Calls]<UL><LI><a href="#[88d784]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FIQ_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[88d784]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FIQ_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> lpc2300.o(RESET)
+</UL>
+<P><STRONG><a name="[8852dc]"></a>_printf_core</STRONG> (Thumb, 790 bytes, Stack size 96 bytes, printf6.o(i._printf_core), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[880e30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<LI><a href="#[885264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
+<LI><a href="#[8852a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
+<LI><a href="#[888888]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r2
+</UL>
+<BR>[Called By]<UL><LI><a href="#[8850fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf$6
 </UL>
 
-<P><STRONG><a name="[21851b0]"></a>_printf_post_padding</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, printf6.o(i._printf_post_padding), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[218a034]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r6
+<P><STRONG><a name="[8852a0]"></a>_printf_post_padding</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, printf6.o(i._printf_post_padding), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[88a124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r6
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21851ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<BR>[Called By]<UL><LI><a href="#[8852dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[2185174]"></a>_printf_pre_padding</STRONG> (Thumb, 48 bytes, Stack size 40 bytes, printf6.o(i._printf_pre_padding), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[218a034]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r6
+<P><STRONG><a name="[885264]"></a>_printf_pre_padding</STRONG> (Thumb, 48 bytes, Stack size 40 bytes, printf6.o(i._printf_pre_padding), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[88a124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r6
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21851ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<BR>[Called By]<UL><LI><a href="#[8852dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 <P>
 <H3>
