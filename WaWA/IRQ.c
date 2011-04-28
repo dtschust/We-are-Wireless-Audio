@@ -6,8 +6,11 @@
 /* This software may only be used under the terms of a valid, current,        */
 /* end user licence from KEIL for a compatible version of KEIL software       */
 /* development tools. Nothing else gives you the right to use this software.  */
-/******************************************************************************/
+/******************************************************************************/ 
 
+#define BASE
+//#define DEVBOARD
+//#define REMOTE
 #include <LPC23xx.H>                    /* LPC23xx definitions                */
 #include <stdio.h>
 
@@ -18,8 +21,8 @@ unsigned char clock_1s;                 /* Flag activated each second         */
 int currentButton;
 int voiceCode;
 /* Import function for turning LEDs on or off                                 */
-extern void LED_On (unsigned int num);
-extern void LED_Off(unsigned int num);
+//extern void LED_On (unsigned int num);
+//extern void LED_Off(unsigned int num);
 
 
 __irq void I2S_IRQHandler (void) 
@@ -69,8 +72,9 @@ __irq void T0_IRQHandler (void) {
     static int clk_cntr=0;
 	static int yesno=0;
 
-		clk_cntr++;
-  if (clk_cntr>=156)
+#ifdef BASE
+  clk_cntr++;
+  if (clk_cntr>=52)
   {
     if (yesno == 1)
 	{
@@ -85,6 +89,7 @@ __irq void T0_IRQHandler (void) {
 	yesno=1;
 	}
   }
+#endif
 
 
 
@@ -104,19 +109,21 @@ __irq void T0_IRQHandler2 (void) {	 /* Timer interrupt to interface with display
   
   if (clk_cntr%100==0)	 /*Update push buttons 10 times a second*/
   {
+#ifdef DEVBOARD
    currentButton = FIO3PIN;
+#else
+   currentButton = (FIO1PIN >>15) & 0x7; //P1[15-17]
+#endif
    currentButton +=0;
   }
 
   if (clk_cntr%1000==0)
   {
-   something = (FIO2PIN>>5) &0xF;
-   //something = FIO2PIN & 0x0E0;
-  /* one = something & 0x1;
-   two = (something & 0x2)>>2;
-   four =(something & 0x4)>>3;
-   eight = (something & 0x8)>>4;
-   voiceCode = one*1+two*2+four*4+eight*8; */
+#ifdef DEVBOARD
+   something = (FIO2PIN>>5) & 0x0F;
+#else
+   something = (FIO1PIN>>20)& 0x1F;
+#endif
    voiceCode = something;
   }
 
@@ -124,7 +131,6 @@ __irq void T0_IRQHandler2 (void) {	 /* Timer interrupt to interface with display
   if (clk_cntr >= 1000) {
     clk_cntr = 0;
     clock_1s = 1;                       /* Activate flag every 1 second       */
-
   }
 
   T1IR        = 1;                      /* Clear interrupt flag               */

@@ -15,7 +15,7 @@
 ### ADS-LD Output File: '.\Flash\WaWA.axf'
 ### ADS-LD Command File: '.\Flash\WaWA.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '.\Flash\WaWA.lnp', Handle=0x000003D8
+### Creating CmdFile '.\Flash\WaWA.lnp', Handle=0x00000300
 ### Writing '.lnp' file
 ### ADS-LD Command file '.\Flash\WaWA.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

@@ -97,8 +97,8 @@ PCLKSEL1_OFS    EQU     0x1AC           ; Peripheral Clock Select Reg 1 Offset
 OSCRANGE        EQU     (1<<4)          ; Oscillator Range Select
 OSCEN           EQU     (1<<5)          ; Main oscillator Enable
 OSCSTAT         EQU     (1<<6)          ; Main Oscillator Status
-PLLCON_PLLE     EQU     (1<<0)          ; PLL Enable
-PLLCON_PLLC     EQU     (1<<1)          ; PLL Connect
+PLLCON_PLLE     EQU     (1<<0)          ; PLL Enable	 change this used to be a 1 <<0.
+PLLCON_PLLC     EQU     (1<<1)          ; PLL Connect	 change this used to be a 1 << 1
 PLLSTAT_M       EQU     (0x7FFF<<0)     ; PLL M Value
 PLLSTAT_N       EQU     (0xFF<<16)      ; PLL N Value
 PLLSTAT_PLOCK   EQU     (1<<26)         ; PLL Lock Status
@@ -291,8 +291,8 @@ PLLSTAT_PLOCK   EQU     (1<<26)         ; PLL Lock Status
 ;//   </h>
 ;// </e>
 CLOCK_SETUP     EQU     1
-SCS_Val         EQU     0x00000020
-CLKSRCSEL_Val   EQU     0x00000001
+SCS_Val         EQU     0x00000000	;// changes this used to be 0x20
+CLKSRCSEL_Val   EQU     0x00000000 ;// Hey dawg this is where you changed with it.  Its 0x01
 PLLCFG_Val      EQU     0x0000000B
 CCLKCFG_Val     EQU     0x00000005
 USBCLKCFG_Val   EQU     0x00000005
@@ -373,6 +373,8 @@ Reset_Handler
                 MOV     R2, #0x55
 
 ;  Configure and Enable PLL
+;changes
+
                 LDR     R3, =SCS_Val          ; Enable main oscillator
                 STR     R3, [R0, #SCS_OFS] 
 
@@ -381,7 +383,7 @@ OSC_Loop        LDR     R3, [R0, #SCS_OFS]    ; Wait for main osc stabilize
                 ANDS    R3, R3, #OSCSTAT
                 BEQ     OSC_Loop
                 ENDIF
-
+;endchanges
                 LDR     R3, =CLKSRCSEL_Val    ; Select PLL source clock
                 STR     R3, [R0, #CLKSRCSEL_OFS] 
                 LDR     R3, =PLLCFG_Val
